@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - My Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1><br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Best Sellers</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="checkout">
+            <h2>Order Summary</h2>
+            <div id="checkoutItems">
+            </div>
+            <div class="checkout-form">
+                <h3>Shipping Information</h3>
+                <h3>Payment Information</h3>
+                <button onclick="completePurchase()">Complete Purchase</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            displayCartItems();
+        };
+
+        function displayCartItems() {
+            const checkoutItems = document.getElementById("checkoutItems");
+            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+            if (cartItems.length === 0) {
+                checkoutItems.innerHTML = "<p>Your cart is empty.</p>";
+                return;
+            }
+
+            let totalPrice = 0;
+
+            cartItems.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('checkout-item');
+                itemElement.innerHTML = `
+                    <div>
+                        <img src="${item.image}" alt="${item.name}" style="max-width: 100px; height: auto;">
+                        <span>${item.name} - ${item.price} x ${item.quantity}</span>
+                    </div>
+                `;
+                checkoutItems.appendChild(itemElement);
+                totalPrice += parseFloat(item.price.substring(1)) * item.quantity;
+            });
+
+            checkoutItems.innerHTML += `<p>Total Price: $${totalPrice.toFixed(2)}</p>`;
+        }
+
+        function completePurchase() {
+            alert("Purchase completed! Thank you for shopping with us.");
+        }
+    </script>
+</body>
+</html>

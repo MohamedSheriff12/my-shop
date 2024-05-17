@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - My Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-F4+D4ZMlNzoDW8LRMWWYO6ku8u3dFdFQ2Vp+ryggvqBeQg4f9vFFJ7ynRLgES7DeUazCqnskBC12ayMzC+tbDw==" crossorigin="anonymous" />
+</head>
+<body>
+    <header>
+        <h1>Frequently Asked Questions</h1><br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Best Sellers</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="faq-container">
+            <button class="question-button" onclick="showAnswer(1)">What are your shipping options?</button>
+            <div class="answer" id="answer1">We offer standard and expedited shipping options. Standard shipping takes 3-5 business days, while expedited shipping takes 1-2 business days.</div>
+            <button class="question-button" onclick="showAnswer(2)">Do you offer international shipping?</button>
+            <div class="answer" id="answer2">Yes, we offer international shipping to select countries. Shipping rates and delivery times vary depending on the destination.</div>
+            <button class="question-button" onclick="showAnswer(3)">What payment methods do you accept?</button>
+            <div class="answer" id="answer3">We accept credit/debit cards (Visa, Mastercard, American Express), PayPal, and bank transfers.</div>
+            <button class="question-button" onclick="showAnswer(5)">What is your return policy?</button>
+            <div class="answer" id="answer5">Our return policy allows you to return unused items within 30 days of purchase for a full refund.</div>
+            <button class="question-button" onclick="showAnswer(6)">Do you offer gift wrapping?</button>
+            <div class="answer" id="answer6">Yes, we offer gift wrapping services for an additional fee. You can select this option during checkout.</div>
+            <button class="question-button" onclick="showAnswer(7)">How can I contact customer support?</button>
+            <div class="answer" id="answer7">You can contact our customer support team by phone at 1-800-123-4567 or by email at support@example.com.</div>
+            <button class="question-button" onclick="showAnswer(9)">Do you offer discounts for bulk orders?</button>
+            <div class="answer" id="answer9">Yes, we offer discounts for bulk orders. Please contact our sales team for more information.</div>
+        </section>
+        <div class="contact-info">
+            <p>Contact us:</p>
+            <div class="icons">
+                <a href="mailto:info@example.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.facebook.com/example"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/example"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Contact Form</h2>
+            <form action="contact.php" method="post">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <p>&copy; 2024 My Shop. All rights reserved.</p>
+    </main>
+
+    <footer>
+        
+        <p>&copy; 2024 My Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

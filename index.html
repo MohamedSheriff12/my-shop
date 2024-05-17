@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product img {
+    max-width: 50%;
+    height: 50%;
+    margin-bottom: 15px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Shop</h1><br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Best Sellers</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-dropdown" id="cartDropdown">
+            <button onclick="toggleCart()">Cart</button>
+            <div class="cart-content" id="cartContent">
+                <button onclick="goToCheckout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="products">
+            <div class="product" data-product-id="12" data-category="hot-deals" data-price="1499" data-popularity="8">
+                <img src="iphone15pro.jpg" alt="iPhone 15 Pro">
+                <h2>iPhone 15 Pro</h2>
+                <p>$1499.00</p><br><br><br><br><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-product-id="11" data-category="hot-deals" data-price="1299" data-popularity="7">
+                <img src="iphone15.jpg" alt="iPhone 15">
+                <h2>iPhone 15</h2>
+                <p>$1299.00</p><br><br><br><br><br>
+                <button class="add-to-cart">Add to Cart</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - My Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Products</h1><br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Best Sellers</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-dropdown" id="cartDropdown">
+            <button onclick="toggleCart()">Cart</button>
+            <div class="cart-content" id="cartContent">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="filter-container">
+            <button class="filter-btn" onclick="toggleFilterMenu()">Filter</button>
+            <div class="filter-menu" id="filterMenu">
+                <button onclick="sortProducts('high-low')">High to Low</button>
+                <button onclick="sortProducts('low-high')">Low to High</button>
+                <button onclick="sortProducts('popular')">Most Popular</button>
+            </div>
+        </div>
+        
+        <section class="products">
+            <div class="product" data-product-id="1" data-category="hot-deals" data-price="799" data-popularity="10">
+                <img src="iphone12.jpg" alt="iPhone 12">
+                <h2>iPhone 12</h2>
+                <p>$799.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-product-id="2" data-category="hot-deals" data-price="999" data-popularity="9">
+                <img src="samsung-galaxy-s21.jpg" alt="Samsung Galaxy S21">
+                <h2>Samsung Galaxy S21</h2>
+                <p>$999.00</p><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-product-id="12" data-category="hot-deals" data-price="1499" data-popularity="8">
+                <img src="iphone15pro.jpg" alt="iPhone 15 Pro">
+                <h2>iPhone 15 Pro</h2>
+                <p>$1499.00</p><br><br><br><br><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>            
+            </div>
+            <div class="product" data-product-id="4" data-category="hot-deals" data-price="1099" data-popularity="10">
+                <img src="oneplus-9-pro.jpg" alt="OnePlus 9 Pro">
+                <h2>OnePlus 9 Pro</h2>
+                <p>$1099.00</p><br><br><br><br><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-product-id="5" data-category="under-25" data-price="699" data-popularity="6">
+                <img src="xiaomi-mi-11.jpg" alt="Xiaomi Mi 11">
+                <h2>Xiaomi Mi 11</h2>
+                <p>$699.00</p><br><br><br><br><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-product-id="6" data-category="under-25" data-price="1199" data-popularity="8">
+                <img src="huawei-p40-pro.jpg" alt="Huawei P40 Pro">
+                <h2>Huawei P40 Pro</h2>
+                <p>$1199.00</p><br><br><br><br><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-product-id="7" data-category="under-25" data-price="849" data-popularity="9">
+                <img src="oppo-find-x3-pro.jpg" alt="Oppo Find X3 Pro">
+                <h2>Oppo Find X3 Pro</h2>
+                <p>$849.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-product-id="8" data-category="under-25" data-price="999" data-popularity="5">
+                <img src="sony-xperia-1.jpg" alt="Sony Xperia 1 III">
+                <h2>Sony Xperia 1 III</h2>
+                <p>$999.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-product-id="11" data-category="hot-deals" data-price="1299" data-popularity="7">
+                <img src="iphone15.jpg" alt="iPhone 15">
+                <h2>iPhone 15</h2>
+                <p>$1299.00</p><br><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            
+            </div>
+            <div class="product" data-product-id="10" data-category="under-25" data-price="699" data-popularity="3">
+                <img src="motorola-edge-plus.jpg" alt="Motorola Edge+">
+                <h2>Motorola Edge+</h2>
+                <p>$699.00</p><br><br><br><br><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-product-id="11" data-category="hot-deals" data-price="999" data-popularity="8">
+                <img src="iphone13.jpg" alt="iPhone 13">
+                <h2>iPhone 13</h2>
+                <p>$999.00</p><br><br><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            
+            <div class="product" data-product-id="12" data-category="hot-deals" data-price="1099" data-popularity="9">
+                <img src="iphone14.jpg" alt="iPhone 14">
+                <h2>iPhone 14</h2>
+                <p>$1099.00</p><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleFilterMenu() {
+            const filterMenu = document.getElementById("filterMenu");
+            filterMenu.classList.toggle("show");
+        }
+    
+        function sortProducts(sortBy) {
+            const products = document.querySelectorAll('.product');
+            const sortedProducts = Array.from(products);
+    
+            if (sortBy === 'high-low') {
+                sortedProducts.sort((a, b) => b.dataset.price - a.dataset.price);
+            } else if (sortBy === 'low-high') {
+                sortedProducts.sort((a, b) => a.dataset.price - b.dataset.price);
+            } else if (sortBy === 'popular') {
+                sortedProducts.sort((a, b) => b.dataset.popularity - a.dataset.popularity);
+            }
+    
+            const productsContainer = document.querySelector('.products');
+            sortedProducts.forEach(product => {
+                productsContainer.appendChild(product); // Reorder products based on sorting
+            });
+        }
+    </script>    
+</body>
+</html>
